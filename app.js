@@ -1,8 +1,6 @@
 const ApiBuilder = require('claudia-api-builder')
 const metascraper = require('metascraper')
 const got = require('got')
-// const axios = require('axios')
-// const https = require('https')
 const api = new ApiBuilder()
 
 api.post('/metascraper', async req => {
@@ -22,8 +20,6 @@ api.post('/metascraper', async req => {
   }
 
   const {body: html, url} = await got(targetUrl)
-  // let html = await getData(targetUrl)
-  // html = stringify(html)
   const meta = await metascraper({url, html})
 
   return meta
