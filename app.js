@@ -1,25 +1,32 @@
-var ApiBuilder = require('claudia-api-builder'),
-    Metascraper = require('metascraper'),
-    api = new ApiBuilder();
+const ApiBuilder = require('claudia-api-builder')
+const metascraper = require('metascraper')
+const got = require('got')
+// const axios = require('axios')
+// const https = require('https')
+const api = new ApiBuilder()
 
-module.exports = api;
+api.post('/metascraper', async req => {
+  if (!req.hasOwnProperty('queryString') || !req.queryString.hasOwnProperty('url')) {
+    throw new Error('Invalid request. url parameter missing')
+  }
+  // Check if it's a somewhat valid URL
+  let targetUrl = req.queryString.url
 
-api.post('/metascraper', function (request) {
-	// Check if parameter is present at all
-	if (!request.hasOwnProperty("queryString") || !request.queryString.hasOwnProperty("url")) {
-		throw new Error("Invalid request. url parameter missing");
-	}
-	// Check if it's a somewhat valid URL
-	var url = request.queryString.url;
-	if (!/^(http|https):\/\/[^ "]+$/.test(url)) {
-		// Check if maybe only the http part is missing?
-		url = "http://" + url;
-		if (!/^(http|https):\/\/[^ "]+$/.test(url)) {
-			throw new Error("Invalid request. url invalid or non-HTTP(S)");
-		}
-	}
-	console.log("Processing request for URL", url);
+  if (!/^(http|https):\/\/[^ ']+$/.test(targetUrl)) {
+    // Check if maybe only the http part is missing?
+    targetUrl = 'http://' + targetUrl
 
-	// Actually execute the function
-    return Metascraper.scrapeUrl(url);
-});
+    if (!/^(http|https):\/\/[^ ']+$/.test(targetUrl)) {
+      throw new Error('Invalid request. url invalid or non-HTTP(S)')
+    }
+  }
+
+  const {body: html, url} = await got(targetUrl)
+  // let html = await getData(targetUrl)
+  // html = stringify(html)
+  const meta = await metascraper({url, html})
+
+  return meta
+})
+
+module.exports = api
