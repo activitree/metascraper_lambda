@@ -1,21 +1,28 @@
 {
   "name": "metascraper-lambda",
-  "version": "1.0.0",
-  "repository": "https://github.com/Tobi042/metascraper-lambda",
+  "version": "1.0.1",
+  "repository": "https://github.com/activitree/metascraper-lambda",
   "description": "An AWS deployable Lambda + API Gateway metadata scraper",
   "main": "app.js",
   "scripts": {
-    "test": "jasmine",
     "deploy": "claudia create --region eu-central-1 --api-module app --profile claudia",
     "update": "claudia update --profile claudia"
   },
-  "author": "Tobias Theobald <tobitheo@gmail.com>",
+  "author": "Activitree",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.0",
-    "claudia-api-builder": "^4.0.2",
-    "got": "^8.3.1",
-    "metascraper": "^3.11.6"
+    "claudia-api-builder": "^4.1.2",
+    "got": "^9.6.0",
+    "metascraper": "^5.1.1",
+    "metascraper-author": "^5.1.0",
+    "metascraper-clearbit-logo": "^5.0.2",
+    "metascraper-date": "^5.1.1",
+    "metascraper-description": "^5.1.0",
+    "metascraper-image": "^5.1.0",
+    "metascraper-logo": "^5.1.0",
+    "metascraper-publisher": "^5.1.0",
+    "metascraper-title": "^5.1.0",
+    "metascraper-url": "^5.1.0"
   },
   "files": [
     "app.js"

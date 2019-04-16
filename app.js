@@ -1,5 +1,15 @@
 const ApiBuilder = require('claudia-api-builder')
-const metascraper = require('metascraper')
+const metascraper = require('metascraper')([
+	require('metascraper-author')(),
+	require('metascraper-date')(),
+	require('metascraper-description')(),
+	require('metascraper-image')(),
+	require('metascraper-logo')(),
+	require('metascraper-clearbit-logo')(),
+	require('metascraper-publisher')(),
+	require('metascraper-title')(),
+	require('metascraper-url')()
+])
 const got = require('got')
 const api = new ApiBuilder()
 
@@ -19,10 +29,14 @@ api.post('/metascraper', async req => {
     }
   }
 
-  const {body: html, url} = await got(targetUrl)
-  const meta = await metascraper({url, html})
+	try {
+		const { body: html, url } = await got(targetUrl)
 
-  return meta
+		return await metascraper({url, html})
+
+	} catch (error) {
+		console.log(error.response.body)
+	}
 })
 
 module.exports = api

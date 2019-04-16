@@ -8,3 +8,4 @@ dist
 .Rhistory
 *.pyc
 claudia.json
+*.zip
