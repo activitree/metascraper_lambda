@@ -12,7 +12,7 @@ Built with:
 	
 	3. got - Promise based requests
 	
-	4. metasraper from https://metascraper.js.org/#/
+	4. metascraper from https://metascraper.js.org/#/
 	
 ### Few instructions:
 On OSX, it requires 2 files in the user root directory:
