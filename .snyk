@@ -1,0 +1,44 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - metascraper > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-author > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-clearbit > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-title > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-video > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper > @metascraper/helpers > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-author > @metascraper/helpers > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-clearbit > @metascraper/helpers > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-date > @metascraper/helpers > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-description > @metascraper/helpers > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-image > @metascraper/helpers > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-logo > @metascraper/helpers > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-publisher > @metascraper/helpers > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-soundcloud > @metascraper/helpers > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-title > @metascraper/helpers > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-url > @metascraper/helpers > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-video > @metascraper/helpers > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper-youtube > @metascraper/helpers > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
+    - metascraper > cheerio > lodash:
+        patched: '2020-05-01T05:42:40.107Z'
