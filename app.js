@@ -20,31 +20,15 @@ const got = require('got')
 const api = new ApiBuilder()
 
 api.post('/metascraper', async req => {
-
-	// let targetUrl = req.queryString.url
-
-	/*
-  if (!req.hasOwnProperty('queryString') || !req.queryString.hasOwnProperty('url')) {
-    throw new Error('Invalid request. url parameter missing')
-  }
-  // Check if it's a somewhat valid URL
-
-  if (!/^(http|https):\/\/[^ ']+$/.test(targetUrl)) {
-    // Check if maybe only the http part is missing?
-    targetUrl = 'http://' + targetUrl
-
-    if (!/^(http|https):\/\/[^ ']+$/.test(targetUrl)) {
-      throw new Error('Invalid request. url invalid or non-HTTP(S)')
-    }
-  }*/
-
+	console.log('### Am I reaching here bau?!!')
 	try {
 		const { body: html, url } = await got(req.queryString.url)
+		console.log('What do I get here: ', url, html)
 
 		return await metascraper({url, html})
 
 	} catch (error) {
-		console.log(error.response.body)
+		console.log('Getting an error here: ', error.response.body)
 	}
 })
 
