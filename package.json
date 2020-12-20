@@ -8,7 +8,9 @@
     "deploy": "claudia create --region eu-west-2 --api-module app",
     "release": "claudia set-version --use-local-dependencies --version production",
     "update": "claudia update --config claudia.json",
-    "destroy": "claudia destroy"
+    "destroy": "claudia destroy",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Activitree",
   "license": "MIT",
@@ -29,9 +31,11 @@
     "metascraper-url": "^5.15.4",
     "metascraper-video": "^5.15.4",
     "metascraper-youtube": "^5.15.4",
-    "tslib": "^2.0.3"
+    "tslib": "^2.0.3",
+    "snyk": "^1.437.2"
   },
   "files": [
     "app.js"
-  ]
+  ],
+  "snyk": true
 }
