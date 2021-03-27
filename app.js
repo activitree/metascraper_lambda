@@ -18,6 +18,9 @@ const metascraper = require('metascraper')([
 ])
 const got = require('got')
 const api = new ApiBuilder()
+api.corsOrigin('https://www.activitree.com')
+api.corsHeaders('Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Api-Version')
+api.corsMaxAge(864000)
 
 api.post('/metascraper', async req => {
 	console.log('### Am I reaching here bau?!!')
