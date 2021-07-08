@@ -1,20 +1,25 @@
 const ApiBuilder = require('claudia-api-builder')
 const metascraper = require('metascraper')([
-	require('metascraper-author')(),
-	require('metascraper-date')(),
-	require('metascraper-description')(),
-	require('metascraper-image')(),
-	require('metascraper-logo')(),
-	require('metascraper-clearbit')({
-		size: 256,
-		format: 'jpg'
-	}),
-	require('metascraper-publisher')(),
-	require('metascraper-title')(),
-	require('metascraper-url')(),
-	require('metascraper-soundcloud')(),
-	require('metascraper-video')(),
-	require('metascraper-youtube')()
+  require('metascraper-author')(),
+  require('metascraper-date')(),
+  require('metascraper-description')(),
+  require('metascraper-image')(),
+  require('metascraper-logo')(),
+  require('metascraper-clearbit')({
+	  size: 256,
+	  format: 'jpg'
+  }),
+  require('metascraper-publisher')(),
+  require('metascraper-title')(),
+  require('metascraper-url')(),
+  require('metascraper-soundcloud')(),
+  require('metascraper-video')(),
+  require('metascraper-youtube')(),
+  require('metascraper-iframe')(),
+  require('metascraper-instagram')(),
+  require('metascraper-media-provider')(),
+  require('metascraper-telegram')(),
+  require('metascraper-spotify')(),
 ])
 const got = require('got')
 const api = new ApiBuilder()

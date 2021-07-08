@@ -45,3 +45,10 @@ Lambda has updates is re2 library and I am forced to build a docker image and de
 4. I run Node in docker with a bash: 'docker run -e AWS_ACCESS_KEY_ID=xxxx -e AWS_SECRET_ACCESS_KEY=yyy -it lambda-deploy /bin/bash'. Credential can be found in the config file mentioned above.
 5. At the bash prompt do 'npm run update' or 'npm run deploy'. 
 
+CORS examples: https://github.com/claudiajs/example-projects/blob/master/web-api-custom-cors/web.js
+
+if I have a previously created container in the local docker, connect to it
+```javascript
+docker attach amazing_pasteur
+```
+and run 5 from there.
